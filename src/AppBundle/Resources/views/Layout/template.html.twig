@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">  
+    <head>    
+        <title>S3U1</title>    
+        <meta charset="UTF-8">
+        <meta name="title" content="S3U1">
+        <meta name="description" content="Primera aplicación Symfony">
+        {% block style %}
+            <link href="" rel="stylesheet" type="text/css"/>    
+            <style>
+                header{
+                    background-color: #F5F5F5;
+                    width: 100%;
+                    text-align: center;
+                    padding-bottom: 25px;
+                    padding-top: 25px;
+                }
+                nav{
+                    background-color: #5eb5e0;
+                    width: 100%;
+                    padding-bottom: 25px;
+                    padding-top: 25px;
+                }
+                nav a{
+                    color: #FFF;
+                    text-decoration: none;
+                    padding-left: 50px;
+                    width: 100px;
+                }
+                section{
+                    width: 70%; 
+                    min-height: 500px;
+                    background-color: #aacd4e;
+                    float:left;
+                    display : inline-block;
+                }
+                section article{
+                    padding: 20px;
+                }
+                aside{
+                    width: 30%; 
+                    min-height: 500px;
+                    background-color: #ffcc00;
+                    display : inline-block;
+                    /*float:left;*/
+                }
+                aside article{
+                    padding: 20px;
+                }
+                footer{
+                    width: 100%;
+                    padding-top: 20px;
+                    background-color: #d66;
+                }
+                footer article{
+                    padding: 20px;
+                    display : inline-block;
+                }
+            </style>
+        {% endblock %}
+    </head>  
+    <body>    
+        <header>
+            <h1>{% block title %}Título{% endblock %}</h1>      
+        </header>    
+        <nav>
+            {% block navegation %} 
+                <a href="">Ejemplo Enlace</a>
+            {% endblock %}
+        </nav>
+        <section>      
+            <article>
+                <h2>{% block titlepage %}CONTENIDO PRINCIPAL{% endblock %}</h2>
+                {% block maincontainer %}
+                    <!-- Ejemplo de container -->
+                    <p>Este es el contenido principal de mi app          </p>
+                    <div>
+                        <p>Aquí puedes colocar una imagen.</p>
+                        <img src="" alt="image">          
+                    </div>
+                {% endblock %}
+            </article>      
+        </section>
+        <aside>
+            {% block asside %}
+                <article>      
+                    <h3>Publicidad</h3>
+                    <a href="">
+                        <img src="" alt="Publicidad">
+                    </a>
+                </article>      
+            {% endblock %}
+        </aside>
+        <footer>
+            {% block footer %}
+                <article>
+                    <h4>Avisos legales</h4>
+                    <a href="">Política de cookies</a>
+                </article>
+                <article>
+                    <h4>Redes sociales</h4>
+                    <a href="">Facebook</a>
+                </article>
+            {% endblock %}
+        </footer>
+    {% block javascript %}{% endblock %}
+</body>  
+</html>
